@@ -1,0 +1,38 @@
+[
+    {
+        "id": "risty01",
+        "name": "Cricket",
+        "time": 50,
+        "img": "https://www.cricket.com.au/~/-/media/News/2021/07/21BangladeshAustralia.ashx?w=1600"
+    },
+    {
+        "id": "risty02",
+        "name": "Football",
+        "time": 40,
+        "img": "https://cdn.britannica.com/51/190751-050-147B93F7/soccer-ball-goal.jpg?q=60"
+    },
+    {
+        "id": "risty03",
+        "name": "Tennis",
+        "time": 30,
+        "img": "https://image.cnbcfm.com/api/v1/image/107119124-1663259490703-fed.jpg?v=1663259516&w=1600&h=900"
+    },
+    {
+        "id": "risty04",
+        "name": "Badminton",
+        "time": 20,
+        "img": "https://www.bhmpics.com/wallpapers/badminton_sports-1600x900.jpg"
+    },
+    {
+        "id": "risty05",
+        "name": "Golf",
+        "time": 10,
+        "img": "https://img.wallpapersafari.com/desktop/1600/900/51/24/rjQidM.jpg"
+    },
+    {
+        "id": "risty06",
+        "name": "Cycling",
+        "time": 5,
+        "img": "https://i.eurosport.com/2022/09/13/3452761-70440395-1600-900.jpg"
+    }
+]
