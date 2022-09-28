@@ -1,4 +1,5 @@
 import React from 'react';
+import Sports from '../Sports/Sports';
 import './Home.css'
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
                 </div>
             <div className="all-sports">
             <h2 className='text-3xl mt-6 font-bold text-black-800'>Today's sports activities</h2>
+            <Sports></Sports>
             </div>
             </div>
             <div className="sports-details p-6 bg-slate-200">
