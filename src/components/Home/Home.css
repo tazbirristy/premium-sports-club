@@ -1,0 +1,16 @@
+.home-container{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.sports-container{
+    margin-left: 15%;
+    margin-top:5% ;
+}
+
+@media only screen and (min-device-width:320px) and (max-device-width:480px) {
+    .home-container{
+        display: flex;
+        flex-direction: column;
+    }
+}
