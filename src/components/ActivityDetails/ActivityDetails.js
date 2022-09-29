@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ActivityDetails.css';
 
-const ActivityDetails = () => {
+const ActivityDetails = ({count}) => {
+    const[time,setTime]=useState([]);
+    let totalTime=0;
+    for(const sport of count){
+        totalTime=totalTime+sport.time;
+    }
+    useEffect(()=>{
+        const breakTime=localStorage.getItem('breakTiming');
+        setTheTime(breakTime)
+    },[time])
+    const setTheTime=time=>{
+        localStorage.setItem('breakTiming', time)
+        setTime(time)
+    }
+    const handleSport=()=>{
+
+    }
     return (
         <div>
             <div className='ml-3'>
@@ -25,10 +41,10 @@ const ActivityDetails = () => {
             <div className='mt-6'>
                 <h3 className='font-bold text-xl'>Break Time</h3>
                 <div className='flex justify-around bg-slate-200 rounded-md p-2 mt-6'>
-            <button className='bg-purple-400 hover:bg-purple-700 rounded-full hover:text-white p-2'>5m</button>
-            <button className='bg-purple-400 hover:bg-purple-700 rounded-full hover:text-white p-2'>8m</button>
-            <button className='bg-purple-400 hover:bg-purple-700 rounded-full hover:text-white p-2'>10m</button>
-            <button className='bg-purple-400 hover:bg-purple-700 rounded-full hover:text-white p-2'>15m</button>
+            <button onClick={()=>setTheTime(5)} className='bg-purple-400 hover:bg-purple-700 rounded-full hover:text-white p-2'>5m</button>
+            <button onClick={()=>setTheTime(8)} className='bg-purple-400 hover:bg-purple-700 rounded-full hover:text-white p-2'>8m</button>
+            <button onClick={()=>setTheTime(10)} className='bg-purple-400 hover:bg-purple-700 rounded-full hover:text-white p-2'>10m</button>
+            <button onClick={()=>setTheTime(15)} className='bg-purple-400 hover:bg-purple-700 rounded-full hover:text-white p-2'>15m</button>
                 </div>
 
             </div>
@@ -36,11 +52,11 @@ const ActivityDetails = () => {
             <h2 className='font-bold text-xl'>Exercise Details</h2>
             <div className='flex justify-between p-3 rounded-md mt-5 bg-slate-200'>
                 <p>Exercise Time</p>
-                <p className='text-slate-400'>minutes</p>
+                <p className='text-slate-400'>{totalTime}minutes</p>
             </div>
             <div className='flex justify-between p-3 rounded-md mt-5 bg-slate-200'>
                 <p>Break Time</p>
-                <p className='text-slate-400'>minutes</p>
+                <p className='text-slate-400'>{time}minutes</p>
             </div>
             </div>
             <div className='mt-9 text-center'>
