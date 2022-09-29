@@ -14,8 +14,14 @@ const ActivityDetails = ({count}) => {
         setTheTime(breakTime)
     },[time])
     const setTheTime=time=>{
-        localStorage.setItem('breakTiming', time)
-        setTime(time)
+         if(time){
+            localStorage.setItem('breakTiming', time)
+            setTime(time)
+        }
+        else{
+            setTime(0)
+
+        }
     }
     const handleSport=()=>{
         Swal.fire('Congratulations!!!Your activities have been successfully completed')
