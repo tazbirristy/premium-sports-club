@@ -2,13 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Sport from '../Sport/Sport';
 import './Sports.css';
 
-const Sports = () => {
-    const[sports, setSports]=useState([])
-    useEffect(()=>{
-        fetch('sports-data.json')
-        .then(res=>res.json())
-        .then(data=>setSports(data))
-    },[])
+const Sports = ({sports,handleAddToList}) => {
 
     return (
         <div className='sports-cart-container'>
@@ -16,6 +10,7 @@ const Sports = () => {
             sports.map(sport=><Sport 
                 key={sport.id}
                 sport={sport}
+                handleAddToList={handleAddToList}
                 ></Sport>)
          }   
         </div>

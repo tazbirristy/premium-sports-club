@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ActivityDetails from '../ActivityDetails/ActivityDetails';
 import Sports from '../Sports/Sports';
 import './Home.css'
 
 const Home = () => {
+    const [sports,setSports]=useState([]);
+    const[count,setCount]=useState([]);
+    
+    useEffect(()=>{
+        fetch('sports-data.json')
+        .then(res=>res.json())
+        .then(data=>setSports(data))
+    },[])
+    const handleAddToList=(sport)=>{
+        const newCount=[...count, sport];
+        setCount(newCount);
+    }
     return (
         <div className='home-container'>
             <div className="sports-container">
@@ -13,11 +25,11 @@ const Home = () => {
                 </div>
             <div className="all-sports">
             <h2 className='text-3xl mt-6 font-bold text-black-800'>Today's sports activities</h2>
-            <Sports></Sports>
+            <Sports sports={sports} handleAddToList={handleAddToList}></Sports>
             </div>
             </div>
             <div className="sports-details p-6 bg-slate-200">
-            <ActivityDetails></ActivityDetails>
+            <ActivityDetails count={count}></ActivityDetails>
             </div>
            
         </div>
