@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './ActivityDetails.css';
+import Swal from 'sweetalert2'
+ 
 
 const ActivityDetails = ({count}) => {
     const[time,setTime]=useState([]);
@@ -16,6 +18,7 @@ const ActivityDetails = ({count}) => {
         setTime(time)
     }
     const handleSport=()=>{
+        Swal.fire('Congratulations!!!Your activities have been successfully completed')
 
     }
     return (
@@ -60,7 +63,7 @@ const ActivityDetails = ({count}) => {
             </div>
             </div>
             <div className='mt-9 text-center'>
-            <button className='px-10 py-2 text-white lg:text-lg sm:text-sm rounded-lg bg-purple-800 hover:bg-purple-700'>Activity Completed</button>
+            <button onClick={handleSport} className='px-10 py-2 text-white lg:text-lg sm:text-sm rounded-lg bg-purple-800 hover:bg-purple-700'>Activity Completed</button>
             </div>
         </div>
     );
