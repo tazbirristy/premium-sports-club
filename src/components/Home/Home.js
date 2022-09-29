@@ -1,4 +1,5 @@
 import React from 'react';
+import ActivityDetails from '../ActivityDetails/ActivityDetails';
 import Sports from '../Sports/Sports';
 import './Home.css'
 
@@ -16,7 +17,7 @@ const Home = () => {
             </div>
             </div>
             <div className="sports-details p-6 bg-slate-200">
-
+            <ActivityDetails></ActivityDetails>
             </div>
            
         </div>
