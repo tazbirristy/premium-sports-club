@@ -11,7 +11,7 @@ const Sports = () => {
     },[])
 
     return (
-        <div>
+        <div className='sports-cart-container'>
          {
             sports.map(sport=><Sport 
                 key={sport.id}
