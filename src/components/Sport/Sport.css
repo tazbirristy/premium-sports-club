@@ -1,0 +1,11 @@
+.sport-container{
+    background-color: aliceblue;
+    border: 2px solid rgb(243, 199, 243);
+    border-radius: 10px;
+}
+
+@media only screen and (min-device-width:320px) and (max-device-width:480px){
+    .sport-container{
+        margin-bottom: 20px;
+    }
+}
